@@ -1,6 +1,6 @@
 # fntbld-oci
 
-A container image with font-building tools pre-installed:
+A Debian-based container image with font-building tools pre-installed:
 
 - **FontForge** — scriptable font editor
 - **ttfautohint** — auto-hinter for TrueType fonts
