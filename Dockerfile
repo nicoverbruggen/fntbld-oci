@@ -6,6 +6,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN pip install --upgrade pip
 
-RUN pip install --no-cache-dir fonttools font-line
+RUN pip install --no-cache-dir fonttools font-line skia-pathops
 
 WORKDIR /build
