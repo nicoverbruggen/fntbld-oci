@@ -2,10 +2,11 @@
 
 A Debian-based container image with font-building tools pre-installed:
 
-- **FontForge** — scriptable font editor
-- **ttfautohint** — auto-hinter for TrueType fonts
-- **fontTools** — Python library for manipulating font files
-- **OpenType Sanitizer (OTS)** — validator/sanitizer for OTF/TTF/WOFF/WOFF2 fonts
+- **FontForge**, which is a scriptable font editor
+- **ttfautohint**, which is an auto-hinter for TrueType fonts
+- **fontTools**, which is a Python library for manipulating font files
+- **OpenType Sanitizer (OTS)**, which is a validator/sanitizer for OTF/TTF/WOFF/WOFF2 fonts
+- **NodeJS 20.x**, which is required for running Actions via a custom Git Forge
 
 The image contains no project-specific files. Mount or clone your font project into `/build` at runtime.
 
