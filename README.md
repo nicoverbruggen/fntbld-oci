@@ -5,6 +5,7 @@ A Debian-based container image with font-building tools pre-installed:
 - **FontForge**, which is a scriptable font editor
 - **ttfautohint**, which is an auto-hinter for TrueType fonts
 - **fontTools**, which is a Python library for manipulating font files
+- **brotli**, which is a data compression algorithm required for generating webfonts
 - **OpenType Sanitizer (OTS)**, which is a validator/sanitizer for OTF/TTF/WOFF/WOFF2 fonts
 - **NodeJS 20.x**, which is required for running Actions via a custom Git Forge
 
