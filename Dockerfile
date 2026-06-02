@@ -8,6 +8,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN pip install --upgrade pip
 
-RUN pip install --no-cache-dir fonttools font-line skia-pathops brotli freetype-py pillow
+RUN pip install --no-cache-dir fonttools font-line skia-pathops brotli pyyaml freetype-py pillow
 
 WORKDIR /build
