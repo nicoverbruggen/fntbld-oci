@@ -29,7 +29,10 @@ RUN cmake -S /tmp/ff -B /tmp/ff/build -GNinja \
       -DENABLE_DOCS=OFF \
       -DPython3_EXECUTABLE=/usr/local/bin/python3 \
     && cmake --build /tmp/ff/build \
-    && DESTDIR=/opt/ffroot cmake --install /tmp/ff/build
+    && DESTDIR=/opt/ffroot cmake --install /tmp/ff/build \
+    # Strip debug symbols from the installed binaries and shared objects.
+    && find /opt/ffroot/usr/local -type f \( -name '*.so' -o -name '*.so.*' \) -exec strip --strip-unneeded {} + \
+    && find /opt/ffroot/usr/local/bin -type f -exec strip --strip-all {} + 2>/dev/null || true
 
 #####################
 # Stage 2: runtime  #
@@ -41,7 +44,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ttfautohint zip unzip curl opentype-sanitizer ca-certificates gnupg \
     libjpeg62-turbo libpng16-16 libtiff6 libfreetype6 libgif7 \
     libxml2 libspiro1 libuninameslist1 libglib2.0-0 \
-      && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+      && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
       && apt-get install -y --no-install-recommends nodejs \
       && rm -rf /var/lib/apt/lists/*
 
