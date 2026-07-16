@@ -41,7 +41,7 @@ FROM python:3.12-slim
 
 # Runtime shared libraries FontForge links against (no -dev, no GUI libs).
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ttfautohint zip unzip curl opentype-sanitizer ca-certificates gnupg \
+    git ttfautohint zip unzip curl opentype-sanitizer ca-certificates gnupg \
     libjpeg62-turbo libpng16-16 libtiff6 libfreetype6 libgif7 \
     libxml2 libspiro1 libuninameslist1 libglib2.0-0 \
       && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
